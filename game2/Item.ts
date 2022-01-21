@@ -1,4 +1,4 @@
-export abstract class Item {
+export class Item {
 
     name: string;
     sellIn: number;
@@ -9,9 +9,5 @@ export abstract class Item {
         this.sellIn = sellIn;
         this.quality = quality;
     }
-
-    qualityUpdate(){
-    }
-   
 }
 
