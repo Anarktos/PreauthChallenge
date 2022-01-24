@@ -1,6 +1,5 @@
 import { Item } from "./Item";
-import { ModifyItems } from "./modifyItems";
-import { ItemUpdater } from "./updateItems";
+import { TypeAge, TypeBack, TypeConjured, TypeNormal } from "./itemUpdate";
 
 export class GuildedRose {
     items : Array<Item>;
@@ -10,13 +9,11 @@ export class GuildedRose {
     }
 
     updateQuality(){
-        const modifyItem = new ModifyItems()
-        const itemUpdater = new ItemUpdater();
         this.items.forEach(i =>{
-            if (i.name != 'sulfuras'){
-                itemUpdater.updateItem(i);
-                modifyItem.updateSellIn(i); 
-            }
+            if (i.name == 'aged brie') TypeAge.updateItem(i);
+            if (i.name == 'backstage') TypeBack.updateItem(i);
+            if (i.name == 'conjured') TypeConjured.updateItem(i);
+            if (i.name == 'normal') TypeNormal.updateItem(i);
         })
         return this.items;
     }
